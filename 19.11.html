@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 19.11</title>
+
+    <style>
+        @font-face 
+        {
+            font-family: Montserrat;
+            src: url(Montserrat.ttf);
+        }
+
+        body
+        {
+            font-family: Montserrat;
+        }
+    </style>
+
+</head>
+<body>
+
+    <script>
+
+        function task1(a, b)
+        {
+            if(a<b)
+                return a;
+            else
+                return b;
+        }
+        document.write("1) Меньшее число: " + task1(3,6) + "<br><br>");
+
+        function task2(number, power)
+        {
+            return number ** power;
+        }
+        document.write("2) Число " + 2 + " в степени " + 4 + ": " + task2(2, 4) + "<br><br>");
+
+        function task3(a, b, sign)
+        {
+            if(sign == "+")
+                return a+b;
+
+            if(sign == "-")
+                return a-b;
+
+            if(sign == "*")
+                return a*b;
+
+            if(sign == "/")
+                return a/b;              
+        }
+        document.write("3) Результат деления: " + task3(120, 6, "/") + "<br><br>")
+
+        function task4(n)
+        {
+            if(n<2)
+                return false;
+
+            for(var i=2; i<n; i++)
+                if(n%i == 0)
+                    return false;
+            return true;  
+        }
+        document.write("4) Является ли число простым? " + task4(7) + "<br><br>")
+
+        function task5(n)
+        {
+            for(var i=2; i<=9; i++)
+                document.write(n + " × " + i + " = " + (n*i) + "<br><br>")
+        }
+        
+        for(var number=2; number<=9; number++)
+        {
+            task5(number);
+        }
+
+    </script>
+    
+</body>
+</html>
