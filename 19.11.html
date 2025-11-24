@@ -25,59 +25,119 @@
 
         function task1(a, b)
         {
-            if(a<b)
+            if(a < b)
                 return a;
             else
                 return b;
         }
-        document.write("1) Меньшее число: " + task1(3,6) + "<br><br>");
+
+        let a1 = Number(prompt("1) Введите первое число:"));
+        let b1 = Number(prompt("Введите второе число:"));
+
+        document.write("1) Меньшее число: " + task1(a1, b1) + "<br><br>");
 
         function task2(number, power)
         {
             return number ** power;
         }
-        document.write("2) Число " + 2 + " в степени " + 4 + ": " + task2(2, 4) + "<br><br>");
+
+        let number2 = Number(prompt("2) Введите число:"));
+        let power2 = Number(prompt("Введите степень:"));
+
+        document.write("2) Результат: " + task2(number2, power2) + "<br><br>");
 
         function task3(a, b, sign)
         {
             if(sign == "+")
-                return a+b;
+                return a + b;
 
             if(sign == "-")
-                return a-b;
+                return a - b;
 
             if(sign == "*")
-                return a*b;
+                return a * b;
 
             if(sign == "/")
-                return a/b;              
+                return a / b;
         }
-        document.write("3) Результат деления: " + task3(120, 6, "/") + "<br><br>")
 
-        function task4(n)
+        let a3 = Number(prompt("3) Первое число:"));
+        let b3 = Number(prompt("Второе число:"));
+        let sign3 = prompt("Введите знак (+ - * /):");
+
+        document.write("3) Результат: " + task3(a3, b3, sign3) + "<br><br>");
+
+        let task4 = n =>
         {
-            if(n<2)
+            if(n < 2)
                 return false;
 
-            for(var i=2; i<n; i++)
-                if(n%i == 0)
+            for(let i = 2; i < n; i++)
+                if(n % i == 0)
                     return false;
-            return true;  
-        }
-        document.write("4) Является ли число простым? " + task4(7) + "<br><br>")
 
-        function task5(n)
+            return true;
+        };
+
+        let n4 = Number(prompt("4) Введите число для проверки на простоту:"));
+        document.write("4) Простое число? " + task4(n4) + "<br><br>");
+
+        let task5 = number =>
         {
-            for(var i=2; i<=9; i++)
-                document.write(n + " × " + i + " = " + (n*i) + "<br><br>")
-        }
+            for(let i = 1; i <= 10; i++)
+                document.write(number + " × " + i + " = " + (number * i) + "<br>");
+        };
+
+        let n5 = Number(prompt("5) Введите число для таблицы умножения:"));
+
+        document.write("5) Таблица умножения для " + n5 + ":<br>");
+        task5(n5);
+
+        let task6 = (a, b) =>
+        {
+            while(a >= b)
+                a = a - b;
+
+            return a;
+        };
+
+        let a6 = Number(prompt("6) Введите первое число:"));
+        let b6 = Number(prompt("Введите второе число:"));
+
+        document.write("<br>6) Остаток от деления: " + task6(a6, b6) + "<br><br>");
+
+        let task7 = (...nums) =>
+        {
+            let sum = 0;
+
+            for(let i = 0; i < nums.length; i++)
+                sum += nums[i];
+
+            return sum;
+        };
+
+        let input7 = prompt("7) Введите от 1 до 5 чисел через пробел:");
+        let arr7 = input7.split(" ").map(Number);
+
+        document.write("7) Сумма: " + task7(...arr7) + "<br><br>");
+
+        let task8 = (...nums) =>
+        {
+            let max = nums[0];
+
+            for(let i = 1; i < nums.length; i++)
+                if(nums[i] > max)
+                    max = nums[i];
+
+            return max;
+        };
+
+        let input8 = prompt("8) Введите от 1 до 5 чисел через пробел:");
+        let arr8 = input8.split(" ").map(Number);
         
-        for(var number=2; number<=9; number++)
-        {
-            task5(number);
-        }
+        document.write("8) Максимальное число: " + task8(...arr8) + "<br><br>");
 
     </script>
-    
+
 </body>
 </html>
